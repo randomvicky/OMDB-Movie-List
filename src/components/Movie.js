@@ -40,7 +40,7 @@ const Movie = ({ searchResult, isSearchActive, isError }) => {
     <div>
       {isSearchActive ? (
         isError ? (
-          <div>No Result Found</div>
+          <div className="movie-result">No Result Found</div>
         ) : (
           <MovieItemWrapper
             moviesList={searchResult}

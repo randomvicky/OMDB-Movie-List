@@ -52,6 +52,11 @@
 .movie .movieTitle {
   font-family: cursive;
 }
+.movie-result {
+  font-size: 50px;
+  text-align: center;
+  font-family: cursive;
+}
 @media only screen and (max-width: 800px) {
   .movieList {
     grid-template-columns: 1fr;

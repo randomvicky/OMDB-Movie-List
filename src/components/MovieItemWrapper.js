@@ -1,6 +1,7 @@
 import MovieItem from "./MovieItem";
 import { Link } from "react-router-dom";
 import { Fragment } from "react";
+import "../styles/Movie.css";
 
 const MovieItemWrapper = ({ moviesList, heading }) => {
   const isNonEmptyArray = (moviesList) => {
