@@ -20,11 +20,12 @@ const MovieDetails = (props) => {
 
   const saveLikeMovie = () => {
     if (localStorage.getItem("movie-details") !== null) {
-      let movieDetail = JSON.parse(localStorage.getItem("movie-details"));
+      let movieArr = [];
+      movieArr = JSON.parse(localStorage.getItem("movie-details"));
 
-      movieDetail.push({ movieName: movieDetail.Title });
+      movieArr.push({ movieName: movieDetail.Title });
 
-      localStorage.setItem("movie-details", JSON.stringify(movieDetail));
+      localStorage.setItem("movie-details", JSON.stringify(movieArr));
     } else {
       localStorage.setItem(
         "movie-details",
@@ -35,7 +36,7 @@ const MovieDetails = (props) => {
 
   return (
     <>
-      <div className="contact">
+      <div className="movie-detail">
         <div
           className="leftSide"
           style={{ backgroundImage: `url(${movieDetail.Poster})` }}
@@ -46,11 +47,9 @@ const MovieDetails = (props) => {
           <p>Releasd: {movieDetail.Released}</p>
           <p>Runtime: {movieDetail.Runtime}</p>
           <p>Year: {movieDetail.Year}</p>
-          <p>imdbID: {movieDetail.imdbID}</p>
           <p>Director: {movieDetail.Director}</p>
           <p>Country: {movieDetail.Country}</p>
           <p>Language: {movieDetail.Language}</p>
-          <p>Type: {movieDetail.Type}</p>
           <p>
             <button className="like-button" onClick={saveLikeMovie}>
               <div className="btn">

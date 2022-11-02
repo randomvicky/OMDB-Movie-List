@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../assets/movielogo.webp";
 import "../styles/Navbar.css";
 import { Link } from "react-router-dom";
