@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import "../styles/MovieDetail.css";
@@ -8,15 +8,15 @@ const MovieDetails = (props) => {
   const [movieDetail, setMovieDetails] = useState("");
   let { movieId } = useParams();
 
-  const fetchMovieDetails = () => {
+  const fetchMovieDetails = useCallback(() => {
     const REQ_URL = `https://www.omdbapi.com/?i=${movieId}&apikey=f9ea032`;
     axios.get(REQ_URL).then((response) => {
       setMovieDetails(response.data);
     });
-  };
+  }, [movieId]);
   useEffect(() => {
     fetchMovieDetails();
-  }, []);
+  }, [fetchMovieDetails]);
 
   const saveLikeMovie = () => {
     if (localStorage.getItem("movie-details") !== null) {
