@@ -13,6 +13,7 @@ function App() {
   const [searchMovie, setSearchMovie] = useState([]);
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [isError, setIsError] = useState(false);
+
   const changeText = (event) => {
     let searchText = event.target.value;
 

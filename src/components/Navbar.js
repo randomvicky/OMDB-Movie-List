@@ -2,8 +2,14 @@ import React from "react";
 import Logo from "../assets/movielogo.webp";
 import "../styles/Navbar.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ text, changeText, onSearchClick }) => {
+  const navigate = useNavigate();
+  const onButtonClick = () => {
+    navigate("/");
+    onSearchClick();
+  };
   return (
     <div className="navbar">
       <div className="leftSide">
@@ -20,7 +26,7 @@ const Navbar = ({ text, changeText, onSearchClick }) => {
           value={text}
           placeholder="search movie"
         ></input>
-        <button onClick={onSearchClick}>Search Movies</button>
+        <button onClick={onButtonClick}>Search Movies</button>
       </div>
     </div>
   );

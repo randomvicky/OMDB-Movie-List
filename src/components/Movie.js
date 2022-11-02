@@ -50,15 +50,15 @@ const Movie = ({ searchResult, isSearchActive, isError }) => {
       ) : (
         <>
           <MovieItemWrapper
-            moviesList={romanticMovies}
+            moviesList={romanticMovies.slice(0, 6)}
             heading={"TOP ROMANTIC MOVIES"}
           />
           <MovieItemWrapper
-            moviesList={comedyMovies}
+            moviesList={comedyMovies.slice(0, 6)}
             heading={"TOP COMEDY MOVIES"}
           />
           <MovieItemWrapper
-            moviesList={animationMovies}
+            moviesList={animationMovies.slice(0, 6)}
             heading={"TOP ANIMATION MOVIES"}
           />
         </>
