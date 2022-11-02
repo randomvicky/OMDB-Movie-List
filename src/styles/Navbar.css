@@ -1,0 +1,54 @@
+.navbar {
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar .leftSide {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 150px;
+}
+
+.navbar .leftSide img {
+  width: 70px;
+}
+
+.navbar .rightSide {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .rightSide button {
+  color: black;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.navbar .rightSide input {
+  padding: 12px 50px;
+}
+
+@media only screen and (max-width: 678px) {
+  .navbar .rightSide {
+    justify-content: flex-end;
+    padding-right: 50px;
+  }
+
+  .navbar .rightSide button {
+    display: inherit;
+  }
+}
+
+@media only screen and (min-width: 678px) {
+  .hiddenLinks {
+    display: none;
+  }
+}
